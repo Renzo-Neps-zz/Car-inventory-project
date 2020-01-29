@@ -11,4 +11,10 @@ public class Inventory
 	{
 
 	}
+
+	private void display()
+    {
+		Console.WriteLine("ID #: ");
+		Console.WriteLine();
+    }
 }
