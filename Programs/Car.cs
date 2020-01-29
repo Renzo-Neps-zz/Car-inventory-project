@@ -9,26 +9,42 @@ public class Car
     public int PurchasePrice { get; set; }
     public int Miles { get; set; }
     public int SellingPrice { get; set; }
-    public int SoildPrice { get; set; }
-    public bool New { get; set; }
+    public int SoldPrice { get; set; }
     public string Color { get; set; }
 
     public string Condition(int value)
     {
         if (value == 1)
-            return "Factory new";
+            return "Great";
         else if (value == 2)
-            return "Good condition";
+            return "Good";
         else if (value == 3)
-            return "Average condition";
+            return "Average";
         else if (value == 4)
-            return "Terrible codition";
+            return "Terrible";
         else if (value == 5)
             return "Destoryed";
+        else
+            return "Please, input a number 1-5";
     }
 
-    public string Status()
+    public string Status(int value)
     {
+        if (value == 1)
+            return "In stock";
+        else if (value == 2)
+            return "On hold";
+        else if (value == 3)
+            return "Sold";
+        else
+            return "Please, input a number 1-3";
+    }
 
+    public bool New(bool x)
+    {
+        if (x)
+            return true;
+        else
+            return false;
     }
 }
