@@ -1,9 +1,10 @@
 ﻿using System;
 
-public class ProgramRun
+public class Program
 {
 	static void Main(string[] args)
 	{
-
+		Console.WriteLine("Hello world.");
+		Console.ReadLine();
 	}
 }
