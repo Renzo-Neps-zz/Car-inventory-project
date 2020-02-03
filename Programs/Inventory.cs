@@ -21,17 +21,17 @@ public class Inventory
 		CarInventory.Add(car);
 	}
 
-	public void EditInventory(Car X)
+	public void EditInventory(Car car)
 	{
 
 	}
 
-	public void RemoveCar(Car X)
+	public void RemoveCar(Car car)
 	{
 
 	}
 
-	public void Display(Car x)
+	public void Display(Car car)
     {
 		Console.WriteLine("ID #: ");
 		Console.WriteLine();
@@ -39,9 +39,9 @@ public class Inventory
 
 	public void DisplayAll()
 	{
-		foreach (Car x in CarInventory)
+		foreach (Car car in CarInventory)
 		{
-			Display(x);
+			Display(car);
 		}
 	}
 }
