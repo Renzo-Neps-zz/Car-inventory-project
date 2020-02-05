@@ -28,7 +28,16 @@ public class Inventory
 
 	public void EditInventory(Car car)
 	{
+		Console.WriteLine($"Enter car make [{car.Make}]");
+		string newCarMake = Console.ReadLine();
 
+		if (string.IsNullOrEmpty(newCarMake))
+		{
+			newCarMake = car.Make;
+		}
+
+		Console.WriteLine(newCarMake);
+		Console.ReadLine();
 	}
 
 	public void RemoveCar(Car car)
