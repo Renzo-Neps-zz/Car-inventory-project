@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Inventory
 {
 	List<Car> CarInventory;
-	
+
 	/**
 	 * Search "filtering"
 	 * Details "list"
@@ -29,6 +29,20 @@ public class Inventory
 	public void RemoveCar(Car car)
 	{
 
+	}
+
+
+	public Car SearchCar()
+	{
+		int IDinput = Convert.ToInt32(Console.ReadLine());
+		foreach (Car c in CarInventory)
+		{
+			if (IDinput == c.IDNumber)
+			{
+				return c;
+			}
+		}
+		return null;
 	}
 
 	public void Display(Car car)
