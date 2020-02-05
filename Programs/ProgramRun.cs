@@ -8,8 +8,6 @@ public class ProgramRun
 		Car car = new Car();
 		Test(car);
 		inventory.AddCar(car);
-		//inventory.DisplayAll();
-		//Console.ReadLine();
 		bool keepgoing = true;
 
 		while (keepgoing)
