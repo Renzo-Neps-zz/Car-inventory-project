@@ -8,6 +8,9 @@ public class ProgramRun
 		Car car1 = new Car();
 		Test(car1);
 		inventory.AddCar(car1);
+		inventory.DisplayAll();
+		
+		//while ()
 	}
 
 	private static void Test(Car car)

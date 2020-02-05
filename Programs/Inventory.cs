@@ -33,9 +33,20 @@ public class Inventory
 
 	public void Display(Car car)
     {
-		Console.WriteLine("ID #: ");
+		Console.WriteLine("ID #: " + car.IDNumber);
+				
+		Console.WriteLine("{0} {1} {2} ",
+		car.Year,
+		car.Make,
+		car.Model);
 		Console.WriteLine();
-    }
+		Console.WriteLine("Status:" + car.Status(1));
+
+		Console.WriteLine("Condition: {0} {1}",
+		car.New(false), car.Condition(3));
+		Console.WriteLine("Miles: " + car.Miles);
+		Console.WriteLine("Color: " + car.Color);
+	}
 
 	public void DisplayAll()
 	{
@@ -45,18 +56,3 @@ public class Inventory
 		}
 	}
 }
-
-
-/*Console.WriteLine("ID #: " + car.ID);
-
-		Console.WriteLine("{0} {1} {2} ",
-		car.Year,
-		car.Make,
-		car.Model);
-		Console.WriteLine();
-		Console.WriteLine("Status:" + car.Status);
-
-		Console.WriteLine("Condition: {0} {1}",
-			car.New, car.Condition);
-		Console.WriteLine("Miles: " + car.Miles);
-		Console.WriteLine("Color: " + car.Color);*/
