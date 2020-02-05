@@ -16,15 +16,14 @@ public class ProgramRun
 		{
 			Console.WriteLine("Car Inventory Menu");
 			Console.WriteLine();
-			Console.WriteLine("1) Display car");
+			Console.WriteLine("1) Search car");
 			Console.WriteLine("2) Display all cars");
 			Console.WriteLine("3) Add car");
 			Console.WriteLine("4) Exit");
-			Console.ReadLine();
 
 			int input = Convert.ToInt32(Console.ReadLine());
 
-			while (input < 5)
+			while (input > 4)
 			{
 				Console.WriteLine("Please input a number between 1-4");
 				Console.ReadLine();
@@ -53,14 +52,30 @@ public class ProgramRun
 				c.IDNumber = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine("Please type the car manufacturer");
 				c.Make = Console.ReadLine();
-
+				Console.WriteLine("Please type the model of the car");
 				c.Model = Console.ReadLine();
+				Console.WriteLine("Please type the year of the car");
 				c.Year = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Please type the purchase price of the car");
 				c.PurchasePrice = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Please type the milage of the car");
 				c.Miles = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Please type the selling price of the car");
 				c.SellingPrice = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Please type the sold price of the car");
 				c.SoldPrice = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Please type the color of the car");
 				c.Color = Console.ReadLine();
+
+				inventory.AddCar(c);
+				Console.WriteLine();
+				Console.WriteLine("Car added");
+				Console.ReadLine();
+			}
+			else
+			{
+				keepgoing = false;
+				Environment.Exit(0);
 			}
 		}
 	}
