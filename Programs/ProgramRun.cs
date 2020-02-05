@@ -9,8 +9,22 @@ public class ProgramRun
 		Test(car1);
 		inventory.AddCar(car1);
 		inventory.DisplayAll();
+		Console.ReadLine();
+
+		Console.WriteLine("Car Inventory Menu");
+		Console.WriteLine();
+		Console.WriteLine("1) Display car");
+		Console.WriteLine("2) Display all cars");
+		Console.WriteLine("3) Add car");
+		Console.WriteLine("4) Exit");
+		Console.ReadLine();
 		
-		//while ()
+		string input = Console.ReadLine();
+		
+		while (input < 5)
+		{
+			input = Console.ReadLine();
+		}
 	}
 
 	private static void Test(Car car)

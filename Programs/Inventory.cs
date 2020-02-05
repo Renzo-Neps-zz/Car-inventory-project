@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Inventory
 {
-	List<Car> CarInventory = new List<Car>();
-
+	List<Car> CarInventory;
+	
 	/**
 	 * Search "filtering"
 	 * Details "list"
@@ -13,7 +13,7 @@ public class Inventory
 	 */
 	public Inventory()
 	{
-
+		CarInventory = new List<Car>();
 	}
 
 	public void AddCar(Car car)
