@@ -16,6 +16,11 @@ public class Inventory
 		CarInventory = new List<Car>();
 	}
 
+	public int InventoryLength()
+	{
+		return CarInventory.Count;
+	}
+
 	public void AddCar(Car car)
 	{
 		CarInventory.Add(car);
@@ -67,6 +72,8 @@ public class Inventory
 		foreach (Car car in CarInventory)
 		{
 			Display(car);
+			Console.WriteLine();
+			Console.ReadLine();
 		}
 	}
 }
