@@ -31,10 +31,10 @@ public class Inventory
 
 	}
 
-
 	public void Display(Car car)
     {
-
+		Console.WriteLine("ID #: ");
+		Console.WriteLine();
     }
 
 	public void DisplayAll()
