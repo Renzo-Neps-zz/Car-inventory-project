@@ -34,9 +34,11 @@ public class ProgramRun
 
 			if (input == 1)
 			{
-				/*Console.WriteLine("What car do you want to display?");
-				Console.WriteLine("Please type a number between 0 to " + Inventory.InventoryLength());
-				Display(console)*/
+				Console.WriteLine("Please type in ID # of car");
+				int value = Convert.ToInt32(Console.ReadLine());
+				inventory.Display(inventory.SearchCar(value));
+				Console.WriteLine();
+				Console.ReadLine();
 			}
 			else if (input == 2)
 			{

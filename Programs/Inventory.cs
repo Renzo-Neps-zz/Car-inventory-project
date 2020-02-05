@@ -37,9 +37,8 @@ public class Inventory
 	}
 
 
-	public Car SearchCar()
+	public Car SearchCar(int IDinput)
 	{
-		int IDinput = Convert.ToInt32(Console.ReadLine());
 		foreach (Car c in CarInventory)
 		{
 			if (IDinput == c.IDNumber)
