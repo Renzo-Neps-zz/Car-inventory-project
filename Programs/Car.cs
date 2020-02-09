@@ -12,6 +12,15 @@ public class Car
     public int SoldPrice { get; set; }
     public string Color { get; set; }
 
+    /*private string c;
+
+    public string Condition
+    {
+        get { return c; }
+        set { c = Condition(value); }
+    }
+
+
     public string Condition(int value)
     {
         if (value == 1)
@@ -40,11 +49,11 @@ public class Car
             return "Please, input a number 1-3";
     }
 
-    public bool New(bool x)
+    public string New(bool x)
     {
         if (x)
-            return true;
+            return "New";
         else
-            return false;
-    }
+            return "Used";
+    }*/
 }

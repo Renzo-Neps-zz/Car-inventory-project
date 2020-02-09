@@ -26,18 +26,30 @@ public class Inventory
 		CarInventory.Add(car);
 	}
 
-	public void EditInventory(Car car)
+	public string StringEditMethod(string str, string word)
 	{
-		Console.WriteLine($"Enter car make [{car.Make}]");
-		string newCarMake = Console.ReadLine();
+		Console.WriteLine($"Enter car {word}"); 
+		Console.WriteLine($"Currenlty its {str}");
+		string change = Console.ReadLine();
 
-		if (string.IsNullOrEmpty(newCarMake))
+		if (string.IsNullOrEmpty(change))
 		{
-			newCarMake = car.Make;
+			change = str;
 		}
+		return change;
+	}
 
-		Console.WriteLine(newCarMake);
-		Console.ReadLine();
+	public int IntEditMethod(int x, string word)
+	{
+		Console.WriteLine($"Enter car {word}"); 
+		Console.WriteLine($"Currently its {x}");
+		int change = Convert.ToInt32(Console.ReadLine());
+
+		if (string.IsNullOrEmpty(change.ToString()))
+		{
+			change = x;
+		}
+		return change;
 	}
 
 	public void RemoveCar(Car car)
@@ -67,10 +79,10 @@ public class Inventory
 		car.Make,
 		car.Model);
 		Console.WriteLine();
-		Console.WriteLine("Status:" + car.Status(1));
+		//Console.WriteLine("Status:" + car.Status(1));
 
-		Console.WriteLine("Condition: {0} {1}",
-		car.New(false), car.Condition(3));
+		/*Console.WriteLine("Condition: {0} {1}",
+		car.New(false), car.Condition(3));*/
 		Console.WriteLine("Miles: " + car.Miles);
 		Console.WriteLine("Color: " + car.Color);
 	}
