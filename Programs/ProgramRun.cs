@@ -10,10 +10,13 @@ public class ProgramRun
 		inventory.AddCar(car);
 		bool keepgoing = true;
 
-		/*Car car1 = new Car();
+		Car car1 = new Car();
 		Test1(car1);
-		inventory.AddCar(car1);*/
-		
+		inventory.AddCar(car1);
+
+		Car car2 = new Car();
+		Test2(car2);
+		inventory.AddCar(car2);
 
 		while (keepgoing)
 		{
@@ -99,7 +102,7 @@ public class ProgramRun
 	}
 
 
-	/*private static void Test1(Car car1)
+	private static void Test1(Car car1)
 	{
 		car1.IDNumber = 1243;
 		car1.Make = "Honda";
@@ -110,5 +113,18 @@ public class ProgramRun
 		car1.SellingPrice = 8765;
 		car1.SoldPrice = 8565;
 		car1.Color = "Blue";
-	}*/
+	}
+
+	private static void Test2(Car car2)
+	{
+		car2.IDNumber = 2288;
+		car2.Make = "Hyundai";
+		car2.Model = "Tucson";
+		car2.Year = 2018;
+		car2.PurchasePrice = 19000;
+		car2.Miles = 10000;
+		car2.SellingPrice = 17500;
+		car2.SoldPrice = 17000;
+		car2.Color = "Burgandy";
+	}
 }
