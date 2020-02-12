@@ -136,7 +136,8 @@ public class ProgramRun
 				// Get ID Number
 				Console.WriteLine("Please type an ID number for the car");
 				int? idNumber = inventory.ConvertToInteger(Console.ReadLine());
-				while (idNumber == null || inventory.SearchCar((int)idNumber) != null) {
+				while (idNumber == null || inventory.SearchCar((int)idNumber) != null)
+				{
 					Console.WriteLine("Id is invalid or already exsits. Try again");
 					idNumber = inventory.ConvertToInteger(Console.ReadLine());
 				}
