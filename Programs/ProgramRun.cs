@@ -140,7 +140,6 @@ public class ProgramRun
 					Console.WriteLine("Id is invalid or already exsits. Try again");
 					idNumber = inventory.ConvertToInteger(Console.ReadLine());
 				}
-
 				c.IDNumber = (int)idNumber;
 
 				Console.WriteLine("Please type the car manufacturer");
