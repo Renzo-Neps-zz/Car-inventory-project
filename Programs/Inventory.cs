@@ -38,7 +38,7 @@ public class Inventory
 		}
 		return change;
 	}
-
+	
 	public int IntEditMethod(int x, string word)
 	{
 		Console.WriteLine($"Enter car {word}"); 
