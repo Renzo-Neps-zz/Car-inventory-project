@@ -56,17 +56,10 @@ public class ProgramRun
 
 			int? input = inventory.ConvertToInteger(Console.ReadLine());
 
-			while(input.HasValue == false)
+			while(input.HasValue == false || (input > 4 || input < 1))
 			{
-				Console.WriteLine("You done did messaed a-aron, try again! I accept 1-4.");
+				Console.WriteLine("You done did messaed a-aron, try again!");
 				input = inventory.ConvertToInteger(Console.ReadLine());
-			}
-
-			while (input > 4 || input < 1)
-			{
-				Console.WriteLine("Please input a number between 1-4");
-				Console.ReadLine();
-				input = Convert.ToInt32(Console.ReadLine());
 			}
 
 			Console.Clear();
