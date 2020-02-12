@@ -43,14 +43,26 @@ public class Inventory
 	{
 		Console.WriteLine($"Enter car {word}"); 
 		Console.WriteLine($"Currently its {currentValue}");
-		if(int.TryParse(Console.ReadLine(), out int intValue))
+		int? newValue = ConvertToInteger(Console.ReadLine());
+		
+		if(newValue.HasValue)
+		{
+			return newValue.Value;
+		}
+
+		return currentValue;
+	}
+
+	public int? ConvertToInteger(string value)
+	{
+		if (int.TryParse(value, out int intValue))
 		{
 			return intValue;
-		} else
-		{
-			return currentValue;
 		}
+
+		return null; // default to 0
 	}
+
 
 	public void RemoveCar(Car car)
 	{

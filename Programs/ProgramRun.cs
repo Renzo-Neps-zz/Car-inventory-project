@@ -54,7 +54,13 @@ public class ProgramRun
 			Console.WriteLine("3) Add car");
 			Console.WriteLine("4) Exit");
 
-			int input = Convert.ToInt32(Console.ReadLine());
+			int? input = inventory.ConvertToInteger(Console.ReadLine());
+
+			while(input.HasValue == false)
+			{
+				Console.WriteLine("You done did messaed a-aron, try again! I accept 1-4.");
+				input = inventory.ConvertToInteger(Console.ReadLine());
+			}
 
 			while (input > 4 || input < 1)
 			{
