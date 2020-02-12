@@ -42,6 +42,7 @@ public class ProgramRun
 
 		inventory.AddCar(car);
 		inventory.AddCar(car1);
+		inventory.AddCar(car2);
 		bool keepgoing = true;
 
 
