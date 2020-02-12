@@ -39,17 +39,17 @@ public class Inventory
 		return change;
 	}
 
-	public int IntEditMethod(int x, string word)
+	public int IntEditMethod(int currentValue, string word)
 	{
 		Console.WriteLine($"Enter car {word}"); 
-		Console.WriteLine($"Currently its {x}");
-		int change = Convert.ToInt32(Console.ReadLine());
-
-		if (string.IsNullOrEmpty(change.ToString()))
+		Console.WriteLine($"Currently its {currentValue}");
+		if(int.TryParse(Console.ReadLine(), out int intValue))
 		{
-			change = x;
+			return intValue;
+		} else
+		{
+			return currentValue;
 		}
-		return change;
 	}
 
 	public void RemoveCar(Car car)
