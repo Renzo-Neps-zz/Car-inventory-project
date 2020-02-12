@@ -42,6 +42,7 @@ public class ProgramRun
 
 		inventory.AddCar(car);
 		inventory.AddCar(car1);
+		inventory.AddCar(car2);
 		bool keepgoing = true;
 
 
@@ -73,11 +74,12 @@ public class ProgramRun
 				Console.WriteLine("2) Edit car");
 				Console.WriteLine("3) Display car");
 				Console.WriteLine("4) Exit");
+				
 				int input2 = Convert.ToInt32(Console.ReadLine());
+				
 				while(input2 > 4 || input2 < 1)
 				{
 					Console.WriteLine("Please input a number between 1-4");
-					Console.ReadLine();
 					input2 = Convert.ToInt32(Console.ReadLine());
 				}
 				
@@ -118,11 +120,13 @@ public class ProgramRun
 			}
 			else if (input == 2)
 			{
+				Console.Clear();
 				Console.WriteLine("Displaying all cars");
 				inventory.DisplayAll();
 			}
 			else if (input == 3)
 			{
+				Console.Clear();
 				Console.WriteLine("Add a new car");
 				Console.WriteLine();
 				Car c = new Car();

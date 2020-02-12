@@ -49,9 +49,9 @@ public class Car
             return "Please, input a number 1-3";
     }
 
-    public string New(bool x)
+    public string New(bool new)
     {
-        if (x)
+        if (new)
             return "New";
         else
             return "Used";
