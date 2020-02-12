@@ -21,6 +21,12 @@ public class Inventory
 		return CarInventory.Count;
 	}
 
+	public void UpdateCar(Car car)
+	{
+		throw new Exception("This needs to be implemented, the updatecar method");
+		//CarInventory.
+	}
+
 	public void AddCar(Car car)
 	{
 		CarInventory.Add(car);

@@ -68,7 +68,9 @@ public class ProgramRun
 			if (input == 1)
 			{
 				Console.WriteLine("Please type in ID # of car");
-				int value = Convert.ToInt32(Console.ReadLine());
+				int carId = Convert.ToInt32(Console.ReadLine());
+				Car foundCar = inventory.SearchCar(carId);
+
 				Console.WriteLine("Please input a number between 1-3");
 				Console.WriteLine("1) Remove car");
 				Console.WriteLine("2) Edit car");
@@ -76,7 +78,6 @@ public class ProgramRun
 				Console.WriteLine("4) Exit");
 				
 				int input2 = Convert.ToInt32(Console.ReadLine());
-				
 				while(input2 > 4 || input2 < 1)
 				{
 					Console.WriteLine("Please input a number between 1-4");
@@ -90,26 +91,27 @@ public class ProgramRun
 				else if (input2 == 2)
 				{
 					Console.Clear();
-					car.Make = inventory.StringEditMethod(car.Make, "make");
+					foundCar.Make = inventory.StringEditMethod(car.Make, "make");
 					Console.WriteLine(car.Make);
-					car.Model = inventory.StringEditMethod(car.Model, "model");
+					foundCar.Model = inventory.StringEditMethod(car.Model, "model");
 					Console.WriteLine(car.Model);
-					car.Year = inventory.IntEditMethod(car.Year, "year");
+					foundCar.Year = inventory.IntEditMethod(car.Year, "year");
 					Console.WriteLine(car.Year);
-					car.PurchasePrice = inventory.IntEditMethod(car.PurchasePrice, "purchase price");
+					foundCar.PurchasePrice = inventory.IntEditMethod(car.PurchasePrice, "purchase price");
 					Console.WriteLine(car.PurchasePrice);
-					car.Miles = inventory.IntEditMethod(car.Miles, "miles");
+					foundCar.Miles = inventory.IntEditMethod(car.Miles, "miles");
 					Console.WriteLine(car.Miles);
-					car.SellingPrice = inventory.IntEditMethod(car.SellingPrice, "selling price");
+					foundCar.SellingPrice = inventory.IntEditMethod(car.SellingPrice, "selling price");
 					Console.WriteLine(car.SellingPrice);
-					car.SoldPrice = inventory.IntEditMethod(car.SoldPrice, "sold price");
+					foundCar.SoldPrice = inventory.IntEditMethod(car.SoldPrice, "sold price");
 					Console.WriteLine(car.SoldPrice);
-					car.Color = inventory.StringEditMethod(car.Color, "color");
+					foundCar.Color = inventory.StringEditMethod(car.Color, "color");
 					Console.WriteLine(car.Color);
+					inventory.UpdateCar(foundCar);
 				}
 				else if (input2 == 3)
 				{
-					inventory.Display(inventory.SearchCar(value));
+					inventory.Display(inventory.SearchCar(carId));
 					Console.WriteLine();
 					Console.ReadLine();
 				}
@@ -130,8 +132,17 @@ public class ProgramRun
 				Console.WriteLine("Add a new car");
 				Console.WriteLine();
 				Car c = new Car();
+
+				// Get ID Number
 				Console.WriteLine("Please type an ID number for the car");
-				c.IDNumber = Convert.ToInt32(Console.ReadLine());
+				int? idNumber = inventory.ConvertToInteger(Console.ReadLine());
+				while (idNumber == null || inventory.SearchCar((int)idNumber) != null) {
+					Console.WriteLine("Id is invalid or already exsits. Try again");
+					idNumber = inventory.ConvertToInteger(Console.ReadLine());
+				}
+
+				c.IDNumber = (int)idNumber;
+
 				Console.WriteLine("Please type the car manufacturer");
 				c.Make = Console.ReadLine();
 				Console.WriteLine("Please type the model of the car");
