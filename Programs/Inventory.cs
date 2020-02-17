@@ -21,12 +21,6 @@ public class Inventory
 		return CarInventory.Count;
 	}
 
-	public void UpdateCar(Car car)
-	{
-		throw new Exception("This needs to be implemented, the updatecar method");
-		//CarInventory.
-	}
-
 	public void AddCar(Car car)
 	{
 		CarInventory.Add(car);
@@ -45,30 +39,18 @@ public class Inventory
 		return change;
 	}
 
-	public int IntEditMethod(int currentValue, string word)
+	public int IntEditMethod(int x, string word)
 	{
 		Console.WriteLine($"Enter car {word}"); 
-		Console.WriteLine($"Currently its {currentValue}");
-		int? newValue = ConvertToInteger(Console.ReadLine());
-		
-		if(newValue.HasValue)
+		Console.WriteLine($"Currently its {x}");
+		int change = Convert.ToInt32(Console.ReadLine());
+
+		if (string.IsNullOrEmpty(change.ToString()))
 		{
-			return newValue.Value;
+			change = x;
 		}
-
-		return currentValue;
+		return change;
 	}
-
-	public int? ConvertToInteger(string value)
-	{
-		if (int.TryParse(value, out int intValue))
-		{
-			return intValue;
-		}
-
-		return null; // default to 0
-	}
-
 
 	public void RemoveCar(Car car)
 	{
