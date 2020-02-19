@@ -43,7 +43,7 @@ public class Car
     public string Status
     {
         get { return s; }
-        set { c = StatusSet(value); }
+        set { s = StatusSet(value); }
     }
 
     public string StatusSet(string value)

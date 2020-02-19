@@ -62,15 +62,14 @@ public class Inventory
 		return change;
 	}
 
-	public void RemoveCar(int IdNumber)
+	public void RemoveCar(Car car)
 	{
-		Car car = SearchCar(IdNumber);
 		CarInventory.Remove(car);
 	}
 
 	public void UpdateCar(Car car)
 	{
-		RemoveCar(car.IDNumber);
+		RemoveCar(car);
 		AddCar(car);
 	}
 
@@ -95,7 +94,7 @@ public class Inventory
 		car.Make,
 		car.Model);
 		Console.WriteLine();
-		Console.WriteLine("Status:" + car.Status);
+		Console.WriteLine("Status: " + car.Status);
 
 		Console.WriteLine("Condition: {0} {1}",
 		car.IsNew ? "New" : "Used", car.Condition);

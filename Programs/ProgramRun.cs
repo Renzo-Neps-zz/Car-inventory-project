@@ -57,6 +57,7 @@ public class ProgramRun
 
 		while (keepgoing)
 		{
+			Console.Clear();
 			Console.WriteLine("Car Inventory Menu");
 			Console.WriteLine();
 			Console.WriteLine("1) Remove/Edit/Display car");
@@ -85,9 +86,9 @@ public class ProgramRun
 				Console.WriteLine("2) Edit car");
 				Console.WriteLine("3) Display car");
 				Console.WriteLine("4) Exit");
-				
-				int input2 = Convert.ToInt32(Console.ReadLine());
-				while(input2 > 4 || input2 < 1)
+
+				int? input2 = inventory.ConvertToInteger(Console.ReadLine());
+				while (input2 > 4 || input2 < 1)
 				{
 					Console.WriteLine("Please input a number between 1-4");
 					input2 = Convert.ToInt32(Console.ReadLine());
@@ -95,9 +96,16 @@ public class ProgramRun
 				
 				if (input2 == 1)
 				{
-					inventory.RemoveCar(foundCar.IDNumber);
-					//inventory.Display(foundCar);
-					//Console.WriteLine("Are you sure that you want to remove car?")
+					Console.Clear();
+					inventory.Display(foundCar);
+					Console.WriteLine();
+					Console.WriteLine("Are you sure that you want to remove car?");
+					Console.WriteLine("1) Yes");
+					Console.WriteLine("2) No");
+
+					int? i = inventory.ConvertToInteger(Console.ReadLine());
+					if (i == 1)
+					{ inventory.RemoveCar(foundCar); }
 				}
 				else if (input2 == 2)
 				{
