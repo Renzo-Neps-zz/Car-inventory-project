@@ -26,6 +26,16 @@ public class Inventory
 		CarInventory.Add(car);
 	}
 
+	public int? ConvertToInteger(string value)
+	{
+		if (int.TryParse(value, out int intValue))
+		{
+			return intValue;
+		}
+
+		return null; // default to 0
+	}
+
 	public string StringEditMethod(string str, string word)
 	{
 		Console.WriteLine($"Enter car {word}"); 
@@ -52,11 +62,17 @@ public class Inventory
 		return change;
 	}
 
-	public void RemoveCar(Car car)
+	public void RemoveCar(int IdNumber)
 	{
-
+		Car car = SearchCar(IdNumber);
+		CarInventory.Remove(car);
 	}
 
+	public void UpdateCar(Car car)
+	{
+		RemoveCar(car.IDNumber);
+		AddCar(car);
+	}
 
 	public Car SearchCar(int IDinput)
 	{
@@ -79,10 +95,10 @@ public class Inventory
 		car.Make,
 		car.Model);
 		Console.WriteLine();
-		//Console.WriteLine("Status:" + car.Status(1));
+		Console.WriteLine("Status:" + car.Status);
 
-		/*Console.WriteLine("Condition: {0} {1}",
-		car.New(false), car.Condition(3));*/
+		Console.WriteLine("Condition: {0} {1}",
+		car.IsNew ? "New" : "Used", car.Condition);
 		Console.WriteLine("Miles: " + car.Miles);
 		Console.WriteLine("Color: " + car.Color);
 	}

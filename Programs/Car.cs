@@ -11,49 +11,50 @@ public class Car
     public int SellingPrice { get; set; }
     public int SoldPrice { get; set; }
     public string Color { get; set; }
+    public bool IsNew { get; set; }
 
-    /*private string c;
+    private string c;
 
     public string Condition
     {
         get { return c; }
-        set { c = Condition(value); }
+        set { c = ConditionSet(value); }
     }
 
 
-    public string Condition(int value)
+    public string ConditionSet(string value)
     {
-        if (value == 1)
+        if (value == "1")
             return "Great";
-        else if (value == 2)
+        else if (value == "2")
             return "Good";
-        else if (value == 3)
+        else if (value == "3")
             return "Average";
-        else if (value == 4)
+        else if (value == "4")
             return "Terrible";
-        else if (value == 5)
+        else if (value == "5")
             return "Destoryed";
         else
-            return "Please, input a number 1-5";
+            return "Not set";
     }
 
-    public string Status(int value)
+    private string s;
+
+    public string Status
     {
-        if (value == 1)
+        get { return s; }
+        set { c = StatusSet(value); }
+    }
+
+    public string StatusSet(string value)
+    {
+        if (value == "1")
             return "In stock";
-        else if (value == 2)
+        else if (value == "2")
             return "On hold";
-        else if (value == 3)
+        else if (value == "3")
             return "Sold";
         else
-            return "Please, input a number 1-3";
+            return "Not set";
     }
-
-    public string New(bool new)
-    {
-        if (new)
-            return "New";
-        else
-            return "Used";
-    }*/
 }

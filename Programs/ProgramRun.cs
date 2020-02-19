@@ -16,6 +16,9 @@ public class ProgramRun
 		car.SellingPrice = 36500;
 		car.SoldPrice = 34500;
 		car.Color = "Black";
+		car.Condition = "1";
+		car.Status = "2";
+		car.IsNew = true;
 
 		Car car1 = new Car();
 		car1.IDNumber = 1243;
@@ -27,6 +30,9 @@ public class ProgramRun
 		car1.SellingPrice = 8765;
 		car1.SoldPrice = 8565;
 		car1.Color = "Blue";
+		car1.Condition = "4";
+		car1.Status = "3";
+		car1.IsNew = false;
 
 
 		Car car2 = new Car();
@@ -39,6 +45,9 @@ public class ProgramRun
 		car2.SellingPrice = 17500;
 		car2.SoldPrice = 17000;
 		car2.Color = "Burgandy";
+		car2.Condition = "5";
+		car2.Status = "1";
+		car2.IsNew = false;
 
 		inventory.AddCar(car);
 		inventory.AddCar(car1);
@@ -86,27 +95,29 @@ public class ProgramRun
 				
 				if (input2 == 1)
 				{
-
+					inventory.RemoveCar(foundCar.IDNumber);
+					//inventory.Display(foundCar);
+					//Console.WriteLine("Are you sure that you want to remove car?")
 				}
 				else if (input2 == 2)
 				{
 					Console.Clear();
-					foundCar.Make = inventory.StringEditMethod(car.Make, "make");
-					Console.WriteLine(car.Make);
-					foundCar.Model = inventory.StringEditMethod(car.Model, "model");
-					Console.WriteLine(car.Model);
-					foundCar.Year = inventory.IntEditMethod(car.Year, "year");
-					Console.WriteLine(car.Year);
-					foundCar.PurchasePrice = inventory.IntEditMethod(car.PurchasePrice, "purchase price");
-					Console.WriteLine(car.PurchasePrice);
-					foundCar.Miles = inventory.IntEditMethod(car.Miles, "miles");
-					Console.WriteLine(car.Miles);
-					foundCar.SellingPrice = inventory.IntEditMethod(car.SellingPrice, "selling price");
-					Console.WriteLine(car.SellingPrice);
-					foundCar.SoldPrice = inventory.IntEditMethod(car.SoldPrice, "sold price");
-					Console.WriteLine(car.SoldPrice);
-					foundCar.Color = inventory.StringEditMethod(car.Color, "color");
-					Console.WriteLine(car.Color);
+					foundCar.Make = inventory.StringEditMethod(foundCar.Make, "make");
+					Console.WriteLine(foundCar.Make);
+					foundCar.Model = inventory.StringEditMethod(foundCar.Model, "model");
+					Console.WriteLine(foundCar.Model);
+					foundCar.Year = inventory.IntEditMethod(foundCar.Year, "year");
+					Console.WriteLine(foundCar.Year);
+					foundCar.PurchasePrice = inventory.IntEditMethod(foundCar.PurchasePrice, "purchase price");
+					Console.WriteLine(foundCar.PurchasePrice);
+					foundCar.Miles = inventory.IntEditMethod(foundCar.Miles, "miles");
+					Console.WriteLine(foundCar.Miles);
+					foundCar.SellingPrice = inventory.IntEditMethod(foundCar.SellingPrice, "selling price");
+					Console.WriteLine(foundCar.SellingPrice);
+					foundCar.SoldPrice = inventory.IntEditMethod(foundCar.SoldPrice, "sold price");
+					Console.WriteLine(foundCar.SoldPrice);
+					foundCar.Color = inventory.StringEditMethod(foundCar.Color, "color");
+					Console.WriteLine(foundCar.Color);
 					inventory.UpdateCar(foundCar);
 				}
 				else if (input2 == 3)
