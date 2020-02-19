@@ -26,6 +26,17 @@ public class Inventory
 		CarInventory.Add(car);
 	}
 
+	public void RemoveCar(Car car)
+	{
+		CarInventory.Remove(car);
+	}
+
+	public void UpdateCar(Car car)
+	{
+		RemoveCar(car);
+		AddCar(car);
+	}
+
 	public int? ConvertToInteger(string value)
 	{
 		if (int.TryParse(value, out int intValue))
@@ -53,24 +64,13 @@ public class Inventory
 	{
 		Console.WriteLine($"Enter car {word}"); 
 		Console.WriteLine($"Currently its {x}");
-		int change = Convert.ToInt32(Console.ReadLine());
+		int? change = ConvertToInteger(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change.ToString()))
 		{
 			change = x;
 		}
-		return change;
-	}
-
-	public void RemoveCar(Car car)
-	{
-		CarInventory.Remove(car);
-	}
-
-	public void UpdateCar(Car car)
-	{
-		RemoveCar(car);
-		AddCar(car);
+		return (int) change;
 	}
 
 	public Car SearchCar(int IDinput)

@@ -57,7 +57,7 @@ public class ProgramRun
 
 		while (keepgoing)
 		{
-			Console.Clear();
+			//Console.Clear();
 			Console.WriteLine("Car Inventory Menu");
 			Console.WriteLine();
 			Console.WriteLine("1) Remove/Edit/Display car");
@@ -78,8 +78,14 @@ public class ProgramRun
 			if (input == 1)
 			{
 				Console.WriteLine("Please type in ID # of car");
-				int carId = Convert.ToInt32(Console.ReadLine());
-				Car foundCar = inventory.SearchCar(carId);
+				int? carId = inventory.ConvertToInteger(Console.ReadLine());
+				Car foundCar = inventory.SearchCar((int)carId);
+				while (carId == null)
+				{
+					Console.WriteLine("Car does not exist");
+					Console.WriteLine("Please input another ID number");
+					carId = inventory.ConvertToInteger(Console.ReadLine());
+				}
 
 				Console.WriteLine("Please input a number between 1-3");
 				Console.WriteLine("1) Remove car");
@@ -130,13 +136,13 @@ public class ProgramRun
 				}
 				else if (input2 == 3)
 				{
-					inventory.Display(inventory.SearchCar(carId));
+					inventory.Display(inventory.SearchCar((int) carId));
 					Console.WriteLine();
 					Console.ReadLine();
 				}
 				else
 				{
-
+					Console.Clear();
 				}
 			}
 			else if (input == 2)
