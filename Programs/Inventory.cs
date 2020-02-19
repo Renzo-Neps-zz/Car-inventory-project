@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Inventory
 {
+	Logic logic;
 	List<Car> CarInventory;
 
 	/**
@@ -13,7 +14,9 @@ public class Inventory
 	 */
 	public Inventory()
 	{
+		logic = new Logic();
 		CarInventory = new List<Car>();
+		AddCars();
 	}
 
 	public int InventoryLength()
@@ -37,19 +40,9 @@ public class Inventory
 		AddCar(car);
 	}
 
-	public int? ConvertToInteger(string value)
-	{
-		if (int.TryParse(value, out int intValue))
-		{
-			return intValue;
-		}
-
-		return null; // default to 0
-	}
-
 	public string StringEditMethod(string str, string word)
 	{
-		Console.WriteLine($"Enter car {word}"); 
+		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currenlty its {str}");
 		string change = Console.ReadLine();
 
@@ -62,15 +55,15 @@ public class Inventory
 
 	public int IntEditMethod(int x, string word)
 	{
-		Console.WriteLine($"Enter car {word}"); 
+		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currently its {x}");
-		int? change = ConvertToInteger(Console.ReadLine());
+		int? change = logic.ConvertToInteger(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change.ToString()))
 		{
 			change = x;
 		}
-		return (int) change;
+		return (int)change;
 	}
 
 	public Car SearchCar(int IDinput)
@@ -86,9 +79,9 @@ public class Inventory
 	}
 
 	public void Display(Car car)
-    {
+	{
 		Console.WriteLine("ID #: " + car.IDNumber);
-				
+
 		Console.WriteLine("{0} {1} {2} ",
 		car.Year,
 		car.Make,
@@ -110,5 +103,37 @@ public class Inventory
 			Console.WriteLine();
 			Console.ReadLine();
 		}
+	}
+
+	private void AddCars()
+	{
+		Car car = new Car();
+		car.IDNumber = 369;				car.Make = "Ford";
+		car.Model = "F-150";			car.Year = 2020;
+		car.PurchasePrice = 32500;		car.Miles = 0;
+		car.SellingPrice = 36500;		car.SoldPrice = 34500;
+		car.Color = "Black";			car.Condition = "1";
+		car.Status = "2";				car.IsNew = true;
+
+
+		Car car1 = new Car();
+		car1.IDNumber = 1243;			car1.Make = "Honda";
+		car1.Model = "Civic";			car1.Year = 2010;
+		car1.PurchasePrice = 10000;		car1.Miles = 50000;
+		car1.SellingPrice = 8765;		car1.SoldPrice = 8565;
+		car1.Color = "Blue";			car1.Condition = "4";
+		car1.Status = "3";				car1.IsNew = false;
+
+		Car car2 = new Car();
+		car2.IDNumber = 2288;			car2.Make = "Hyundai";
+		car2.Model = "Tucson";			car2.Year = 2018;
+		car2.PurchasePrice = 19000;		car2.Miles = 10000;
+		car2.SellingPrice = 17500;		car2.SoldPrice = 17000;
+		car2.Color = "Burgandy";		car2.Condition = "5";
+		car2.Status = "1";				car2.IsNew = false;
+
+		AddCar(car);
+		AddCar(car1);
+		AddCar(car2);
 	}
 }
