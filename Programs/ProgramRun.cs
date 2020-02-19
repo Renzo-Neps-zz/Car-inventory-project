@@ -14,6 +14,8 @@ public class ProgramRun
 			//Console.Clear();
 			Console.WriteLine("Car Inventory Menu");
 			Console.WriteLine();
+			Console.WriteLine("There is currently " + inventory.InventoryLength() + " cars in the system.");
+			Console.WriteLine();
 			Console.WriteLine("1) Remove/Edit/Display car");
 			Console.WriteLine("2) Display all cars");
 			Console.WriteLine("3) Add car");
