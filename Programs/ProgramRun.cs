@@ -31,7 +31,7 @@ public class ProgramRun
 
 			Console.Clear();
 
-			if (input == 1)
+			if (input == 1) // Remove, Edit, Display car
 			{
 				Console.WriteLine("Please type in ID # of car");
 				int? carId = logic.ConvertToInteger(Console.ReadLine());
@@ -56,7 +56,7 @@ public class ProgramRun
 					input2 = Convert.ToInt32(Console.ReadLine());
 				}*/
 				
-				if (input2 == 1)
+				if (input2 == 1) // Remove car
 				{
 					Console.Clear();
 					inventory.Display(foundCar);
@@ -69,7 +69,7 @@ public class ProgramRun
 					if (i == 1)
 					{ inventory.RemoveCar(foundCar); }
 				}
-				else if (input2 == 2)
+				else if (input2 == 2) // Edit car
 				{
 					Console.Clear();
 					foundCar.Make = inventory.StringEditMethod(foundCar.Make, "make");
@@ -90,7 +90,7 @@ public class ProgramRun
 					Console.WriteLine(foundCar.Color);
 					inventory.UpdateCar(foundCar);
 				}
-				else if (input2 == 3)
+				else if (input2 == 3) // Display car
 				{
 					inventory.Display(inventory.SearchCar((int) carId));
 					Console.WriteLine();
@@ -101,13 +101,13 @@ public class ProgramRun
 					Console.Clear();
 				}
 			}
-			else if (input == 2)
+			else if (input == 2) // Display all cars
 			{
 				Console.Clear();
 				Console.WriteLine("Displaying all cars");
 				inventory.DisplayAll();
 			}
-			else if (input == 3)
+			else if (input == 3) // Add car
 			{
 				Console.Clear();
 				Console.WriteLine("Add a new car");
