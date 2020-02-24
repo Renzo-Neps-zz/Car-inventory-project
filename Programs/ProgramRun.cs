@@ -116,7 +116,7 @@ public class ProgramRun
 
 				// Get ID Number
 				Console.WriteLine("Please type an ID number for the car");
-				int? idNumber;
+				int? idNumber = logic.ConvertToInteger(Console.ReadLine());
 				while (idNumber == null || inventory.SearchCar((int)idNumber) != null)
 				{
 					Console.WriteLine("Id is invalid or already exsits");
@@ -125,9 +125,9 @@ public class ProgramRun
 				c.IDNumber = (int)idNumber;
 
 				Console.WriteLine("Please type the car manufacturer");
-				c.Make = Console.ReadLine();
+				c.Make = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the model of the car");
-				c.Model = Console.ReadLine();
+				c.Model = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the year of the car");
 				c.Year = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the purchase price of the car");
@@ -139,7 +139,7 @@ public class ProgramRun
 				Console.WriteLine("Please type the sold price of the car");
 				c.SoldPrice = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the color of the car");
-				c.Color = Console.ReadLine();
+				c.Color = logic.Stringinput(Console.ReadLine());
 
 				inventory.AddCar(c);
 				Console.WriteLine();
