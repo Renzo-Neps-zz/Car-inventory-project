@@ -18,7 +18,7 @@ public class Logic
 		return null;
 	}
 
-	public int? ConvertToInteger(string value)
+	public int ConvertToInteger(string value)
 	{
 		if (int.TryParse(value, out int intValue))
 		{
@@ -27,13 +27,22 @@ public class Logic
 
 		Console.WriteLine("Input is invalid, please try again."); //"You done did messaed a-aron, try again!");
 		ConvertToInteger(Console.ReadLine());
-		//Error()
 		return 0; // default to 0
 	}
 
-	/*private void Error()
+	public bool ConvertToBool(string str)
 	{
-		Console.WriteLine("Input is invalid, please try again."); //"You done did messaed a-aron, try again!");
-		ConvertToInteger(Console.ReadLine());
-	}*/
+		if (str == "1")
+		{
+			return true;
+		}
+		else if (str == "2")
+		{
+			return false;
+		}
+
+		Console.WriteLine("Input is invalid, please type 1 or 2");
+		ConvertToBool(Console.ReadLine());
+		return false;
+	}
 }

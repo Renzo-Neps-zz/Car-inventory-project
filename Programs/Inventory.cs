@@ -57,13 +57,13 @@ public class Inventory
 	{
 		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currently its {x}");
-		int? change = logic.ConvertToInteger(Console.ReadLine());
+		int change = logic.ConvertToInteger(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change.ToString()))
 		{
 			change = x;
 		}
-		return (int)change;
+		return change;
 	}
 
 	public Car SearchCar(int IDinput)
