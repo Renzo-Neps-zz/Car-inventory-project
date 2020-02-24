@@ -12,7 +12,14 @@ public class Logic
 		{
 			return intValue;
 		}
+		
+		Error(); // default to 0
+		return 0;
+	}
 
-		return null; // default to 0
+	private void Error()
+	{
+		Console.WriteLine("Input is invalid, please try again."); //"You done did messaed a-aron, try again!");
+		ConvertToInteger(Console.ReadLine());
 	}
 }

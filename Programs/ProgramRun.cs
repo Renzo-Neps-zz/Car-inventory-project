@@ -23,11 +23,11 @@ public class ProgramRun
 
 			int? input = logic.ConvertToInteger(Console.ReadLine());
 
-			while(input.HasValue == false || (input > 4 || input < 1))
+			/*while(input.HasValue == false || (input > 4 || input < 1))
 			{
-				Console.WriteLine("You done did messaed a-aron, try again!");
+				Console.WriteLine("Invalid input, please try again."); //"You done did messaed a-aron, try again!");
 				input = logic.ConvertToInteger(Console.ReadLine());
-			}
+			}*/
 
 			Console.Clear();
 
@@ -50,11 +50,11 @@ public class ProgramRun
 				Console.WriteLine("4) Exit");
 
 				int? input2 = logic.ConvertToInteger(Console.ReadLine());
-				while (input2 > 4 || input2 < 1)
+				/*while (input2 > 4 || input2 < 1)
 				{
 					Console.WriteLine("Please input a number between 1-4");
 					input2 = Convert.ToInt32(Console.ReadLine());
-				}
+				}*/
 				
 				if (input2 == 1)
 				{
@@ -116,10 +116,10 @@ public class ProgramRun
 
 				// Get ID Number
 				Console.WriteLine("Please type an ID number for the car");
-				int? idNumber = logic.ConvertToInteger(Console.ReadLine());
+				int? idNumber;
 				while (idNumber == null || inventory.SearchCar((int)idNumber) != null)
 				{
-					Console.WriteLine("Id is invalid or already exsits. Try again");
+					Console.WriteLine("Id is invalid or already exsits");
 					idNumber = logic.ConvertToInteger(Console.ReadLine());
 				}
 				c.IDNumber = (int)idNumber;
@@ -129,15 +129,15 @@ public class ProgramRun
 				Console.WriteLine("Please type the model of the car");
 				c.Model = Console.ReadLine();
 				Console.WriteLine("Please type the year of the car");
-				c.Year = Convert.ToInt32(Console.ReadLine());
+				c.Year = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the purchase price of the car");
-				c.PurchasePrice = Convert.ToInt32(Console.ReadLine());
+				c.PurchasePrice = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the milage of the car");
-				c.Miles = Convert.ToInt32(Console.ReadLine());
+				c.Miles = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the selling price of the car");
-				c.SellingPrice = Convert.ToInt32(Console.ReadLine());
+				c.SellingPrice = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the sold price of the car");
-				c.SoldPrice = Convert.ToInt32(Console.ReadLine());
+				c.SoldPrice = (int) logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the color of the car");
 				c.Color = Console.ReadLine();
 
