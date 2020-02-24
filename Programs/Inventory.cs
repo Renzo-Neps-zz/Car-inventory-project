@@ -115,7 +115,6 @@ public class Inventory
 		car.Color = "Black";			car.Condition = "1";
 		car.Status = "2";				car.IsNew = true;
 
-
 		Car car1 = new Car();
 		car1.IDNumber = 1243;			car1.Make = "Honda";
 		car1.Model = "Civic";			car1.Year = 2010;
