@@ -130,6 +130,7 @@ public class ProgramRun
 				c.Model = Console.ReadLine();
 				Console.WriteLine("Please type the year of the car");
 				c.Year = Convert.ToInt32(Console.ReadLine());
+				//re ask the question if answer isn't valid
 				Console.WriteLine("Please type the purchase price of the car");
 				c.PurchasePrice = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine("Please type the milage of the car");
@@ -140,7 +141,7 @@ public class ProgramRun
 				c.SoldPrice = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine("Please type the color of the car");
 				c.Color = Console.ReadLine();
-
+				/*We can't use decimals for prices*/
 				inventory.AddCar(c);
 				Console.WriteLine();
 				Console.WriteLine("Car added");
