@@ -57,13 +57,13 @@ public class Inventory
 	{
 		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currently its {x}");
-		int? change = logic.ConvertToInteger(Console.ReadLine());
+		int change = logic.ConvertToInteger(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change.ToString()))
 		{
 			change = x;
 		}
-		return (int)change;
+		return change;
 	}
 
 	public Car SearchCar(int IDinput)
@@ -114,7 +114,6 @@ public class Inventory
 		car.SellingPrice = 36500;		car.SoldPrice = 34500;
 		car.Color = "Black";			car.Condition = "1";
 		car.Status = "2";				car.IsNew = true;
-
 
 		Car car1 = new Car();
 		car1.IDNumber = 1243;			car1.Make = "Honda";

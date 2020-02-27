@@ -21,27 +21,21 @@ public class ProgramRun
 			Console.WriteLine("3) Add car");
 			Console.WriteLine("4) Exit");
 
-			int? input = logic.ConvertToInteger(Console.ReadLine());
-
-			while(input.HasValue == false || (input > 4 || input < 1))
-			{
-				Console.WriteLine("You done did messaed a-aron, try again!");
-				input = logic.ConvertToInteger(Console.ReadLine());
-			}
+			int input = logic.ConvertToInteger(Console.ReadLine());
 
 			Console.Clear();
 
-			if (input == 1)
+			if (input == 1) // Remove, Edit, Display car
 			{
 				Console.WriteLine("Please type in ID # of car");
-				int? carId = logic.ConvertToInteger(Console.ReadLine());
-				while (carId.HasValue == false || inventory.SearchCar((int) carId) == null)
+				int carId = logic.ConvertToInteger(Console.ReadLine());
+				while (inventory.SearchCar(carId) == null)
 				{
 					Console.WriteLine("Car does not exist");
 					Console.WriteLine("Please input another ID number");
 					carId = logic.ConvertToInteger(Console.ReadLine());
 				}
-				Car foundCar = inventory.SearchCar((int)carId);
+				Car foundCar = inventory.SearchCar(carId);
 
 				Console.WriteLine("Please input a number between 1-3");
 				Console.WriteLine("1) Remove car");
@@ -49,14 +43,9 @@ public class ProgramRun
 				Console.WriteLine("3) Display car");
 				Console.WriteLine("4) Exit");
 
-				int? input2 = logic.ConvertToInteger(Console.ReadLine());
-				while (input2 > 4 || input2 < 1)
-				{
-					Console.WriteLine("Please input a number between 1-4");
-					input2 = Convert.ToInt32(Console.ReadLine());
-				}
+				int input2 = logic.ConvertToInteger(Console.ReadLine());
 				
-				if (input2 == 1)
+				if (input2 == 1) // Remove car
 				{
 					Console.Clear();
 					inventory.Display(foundCar);
@@ -65,11 +54,11 @@ public class ProgramRun
 					Console.WriteLine("1) Yes");
 					Console.WriteLine("2) No");
 
-					int? i = logic.ConvertToInteger(Console.ReadLine());
+					int i = logic.ConvertToInteger(Console.ReadLine());
 					if (i == 1)
 					{ inventory.RemoveCar(foundCar); }
 				}
-				else if (input2 == 2)
+				else if (input2 == 2) // Edit car
 				{
 					Console.Clear();
 					foundCar.Make = inventory.StringEditMethod(foundCar.Make, "make");
@@ -90,9 +79,9 @@ public class ProgramRun
 					Console.WriteLine(foundCar.Color);
 					inventory.UpdateCar(foundCar);
 				}
-				else if (input2 == 3)
+				else if (input2 == 3) // Display car
 				{
-					inventory.Display(inventory.SearchCar((int) carId));
+					inventory.Display(inventory.SearchCar(carId));
 					Console.WriteLine();
 					Console.ReadLine();
 				}
@@ -101,13 +90,13 @@ public class ProgramRun
 					Console.Clear();
 				}
 			}
-			else if (input == 2)
+			else if (input == 2) // Display all cars
 			{
 				Console.Clear();
 				Console.WriteLine("Displaying all cars");
 				inventory.DisplayAll();
 			}
-			else if (input == 3)
+			else if (input == 3) // Add car
 			{
 				Console.Clear();
 				Console.WriteLine("Add a new car");
@@ -116,32 +105,48 @@ public class ProgramRun
 
 				// Get ID Number
 				Console.WriteLine("Please type an ID number for the car");
-				int? idNumber = logic.ConvertToInteger(Console.ReadLine());
-				while (idNumber == null || inventory.SearchCar((int)idNumber) != null)
+				int idNumber = logic.ConvertToInteger(Console.ReadLine());
+				while (inventory.SearchCar(idNumber) == null)
 				{
-					Console.WriteLine("Id is invalid or already exsits. Try again");
+					Console.WriteLine("Id is invalid or already exsits");
 					idNumber = logic.ConvertToInteger(Console.ReadLine());
 				}
-				c.IDNumber = (int)idNumber;
+				c.IDNumber = idNumber;
 
 				Console.WriteLine("Please type the car manufacturer");
-				c.Make = Console.ReadLine();
+				c.Make = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the model of the car");
-				c.Model = Console.ReadLine();
+				c.Model = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the year of the car");
+
 				c.Year = Convert.ToInt32(Console.ReadLine());
 				//re ask the question if answer isn't valid
+				c.Year = logic.ConvertToInteger(Console.ReadLine());
+
 				Console.WriteLine("Please type the purchase price of the car");
-				c.PurchasePrice = Convert.ToInt32(Console.ReadLine());
+				c.PurchasePrice = logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the milage of the car");
-				c.Miles = Convert.ToInt32(Console.ReadLine());
+				c.Miles = logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the selling price of the car");
-				c.SellingPrice = Convert.ToInt32(Console.ReadLine());
+				c.SellingPrice = logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the sold price of the car");
-				c.SoldPrice = Convert.ToInt32(Console.ReadLine());
+				c.SoldPrice = logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the color of the car");
+
 				c.Color = Console.ReadLine();
 				/*We can't use decimals for prices*/
+
+				c.Color = logic.Stringinput(Console.ReadLine());
+				Console.WriteLine("Please type the condition of the car");
+				Console.WriteLine("1 = Great, 2 = Good, 3 = Average, 4 = Terrible, 5 = Destroyed");
+				c.ConditionSet(logic.Stringinput(Console.ReadLine()));
+				Console.WriteLine("Please type the status of the car");
+				Console.WriteLine("1 = In stock, 2 = On hold, 3 = Sold");
+				c.StatusSet(logic.Stringinput(Console.ReadLine()));
+				Console.WriteLine("Please type if the car is used or not");
+				Console.WriteLine("1 = New, 2 = Used");
+				c.IsNew = (logic.ConvertToBool(Console.ReadLine()));
+
 				inventory.AddCar(c);
 				Console.WriteLine();
 				Console.WriteLine("Car added");
