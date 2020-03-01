@@ -53,11 +53,11 @@ public class Inventory
 		return change;
 	}
 
-	public int IntEditMethod(int x, string word)
+	public decimal DecimalEditMethod(decimal x, string word)
 	{
 		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currently its {x}");
-		int change = logic.ConvertToInteger(Console.ReadLine());
+		decimal change = logic.ConvertToInteger(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change.ToString()))
 		{
@@ -114,6 +114,7 @@ public class Inventory
 		car.SellingPrice = 36500;		car.SoldPrice = 34500;
 		car.Color = "Black";			car.Condition = "1";
 		car.Status = "2";				car.IsNew = true;
+		AddCar(car);
 
 		Car car1 = new Car();
 		car1.IDNumber = 1243;			car1.Make = "Honda";
@@ -122,6 +123,7 @@ public class Inventory
 		car1.SellingPrice = 8765;		car1.SoldPrice = 8565;
 		car1.Color = "Blue";			car1.Condition = "4";
 		car1.Status = "3";				car1.IsNew = false;
+		AddCar(car1);
 
 		Car car2 = new Car();
 		car2.IDNumber = 2288;			car2.Make = "Hyundai";
@@ -130,9 +132,6 @@ public class Inventory
 		car2.SellingPrice = 17500;		car2.SoldPrice = 17000;
 		car2.Color = "Burgandy";		car2.Condition = "5";
 		car2.Status = "1";				car2.IsNew = false;
-
-		AddCar(car);
-		AddCar(car1);
 		AddCar(car2);
 	}
 }

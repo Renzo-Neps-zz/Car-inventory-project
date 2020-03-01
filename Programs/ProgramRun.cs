@@ -65,15 +65,15 @@ public class ProgramRun
 					Console.WriteLine(foundCar.Make);
 					foundCar.Model = inventory.StringEditMethod(foundCar.Model, "model");
 					Console.WriteLine(foundCar.Model);
-					foundCar.Year = inventory.IntEditMethod(foundCar.Year, "year");
+					foundCar.Year = (int) inventory.DecimalEditMethod(foundCar.Year, "year");
 					Console.WriteLine(foundCar.Year);
-					foundCar.PurchasePrice = inventory.IntEditMethod(foundCar.PurchasePrice, "purchase price");
+					foundCar.PurchasePrice = inventory.DecimalEditMethod(foundCar.PurchasePrice, "purchase price");
 					Console.WriteLine(foundCar.PurchasePrice);
-					foundCar.Miles = inventory.IntEditMethod(foundCar.Miles, "miles");
+					foundCar.Miles = (int) inventory.DecimalEditMethod(foundCar.Miles, "miles");
 					Console.WriteLine(foundCar.Miles);
-					foundCar.SellingPrice = inventory.IntEditMethod(foundCar.SellingPrice, "selling price");
+					foundCar.SellingPrice = inventory.DecimalEditMethod(foundCar.SellingPrice, "selling price");
 					Console.WriteLine(foundCar.SellingPrice);
-					foundCar.SoldPrice = inventory.IntEditMethod(foundCar.SoldPrice, "sold price");
+					foundCar.SoldPrice = inventory.DecimalEditMethod(foundCar.SoldPrice, "sold price");
 					Console.WriteLine(foundCar.SoldPrice);
 					foundCar.Color = inventory.StringEditMethod(foundCar.Color, "color");
 					Console.WriteLine(foundCar.Color);
@@ -118,9 +118,6 @@ public class ProgramRun
 				Console.WriteLine("Please type the model of the car");
 				c.Model = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the year of the car");
-
-				c.Year = Convert.ToInt32(Console.ReadLine());
-				//re ask the question if answer isn't valid
 				c.Year = logic.ConvertToInteger(Console.ReadLine());
 
 				Console.WriteLine("Please type the purchase price of the car");

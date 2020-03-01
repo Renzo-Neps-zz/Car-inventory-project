@@ -6,10 +6,10 @@ public class Car
     public string Make { get; set; }
     public string Model { get; set; }
     public int Year { get; set; }
-    public int PurchasePrice { get; set; }
+    public decimal PurchasePrice { get; set; }
     public int Miles { get; set; }
-    public int SellingPrice { get; set; }
-    public int SoldPrice { get; set; }
+    public decimal SellingPrice { get; set; }
+    public decimal SoldPrice { get; set; }
     public string Color { get; set; }
     public bool IsNew { get; set; }
 
