@@ -133,5 +133,44 @@ public class Inventory
 		car2.Color = "Burgandy";		car2.Condition = "5";
 		car2.Status = "1";				car2.IsNew = false;
 		AddCar(car2);
+
+		Car car3 = new Car();
+		car3.IDNumber = 2290;			car3.Make = "Rocket";
+		car3.Model = "Ship";			car3.Year = 2020;
+		car3.PurchasePrice = 15000000;  car3.Miles = 478000;
+		car3.SellingPrice = 13600000;	car3.SoldPrice = 0;
+		car3.Color = "red";				car3.Condition = "1";
+		car3.Status = "2"; car3.IsNew = true;
+		AddCar(car3);
+
+		Car car4 = new Car();
+		car4.IDNumber = 2291;			car4.Make = "Big";
+		car4.Model = "Tank";			car4.Year = 1962;
+		car4.PurchasePrice = 8000000;	car4.Miles = 4800;
+		car4.SellingPrice = 13000000;	car4.SoldPrice = 0;
+		car4.Color = "camo";				car4.Condition = "";
+		car4.Status = "3";				car4.IsNew = false;
+		AddCar(car4);
+
+		Car car5 = new Car();
+		car5.IDNumber = 2292; car5.Make = "Tesla";
+		car5.Model = "Model S"; car5.Year = 2017;
+		car5.PurchasePrice = 84000; car5.Miles = 3240;
+		car5.SellingPrice = 76000; car5.SoldPrice = 0;
+		car5.Color = "white"; car5.Condition = "1";
+		car5.Status = ""; car5.IsNew = true;
+		AddCar(car5);
+
+		//Template below
+
+		/*Car car4 = new Car();
+		car4.IDNumber = ; car4.Make = "";
+		car4.Model = ""; car4.Year = ;
+		car4.PurchasePrice = ; car4.Miles = ;
+		car4.SellingPrice = ; car4.SoldPrice = 0;
+		car4.Color = ""; car4.Condition = "";
+		car4.Status = ""; car4.IsNew = true;
+		AddCar(car4);*/
+
 	}
 }
