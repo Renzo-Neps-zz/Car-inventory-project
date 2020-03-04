@@ -40,11 +40,36 @@ public class Inventory
 		AddCar(car);
 	}
 
+	public string ChooseEditMethod(string str, string word, int x)
+	{
+		Console.WriteLine($"Enter car {word}");
+		Console.WriteLine($"Currently its {str}");
+		switch(x)
+		{
+			case 1:
+				Console.WriteLine("1 = Great, 2 = Good, 3 = Average, 4 = Terrible, 5 = Destroyed");
+				break;
+			case 2:
+				Console.WriteLine("1 = In stock, 2 = On hold, 3 = Sold");
+				break;
+			case 3:
+				Console.WriteLine("1 = New, 2 = Used");
+				break;
+		}
+		string change = logic.Stringinput(Console.ReadLine());
+
+		if (string.IsNullOrEmpty(change))
+		{
+			change = str;
+		}
+		return change;
+	}
+
 	public string StringEditMethod(string str, string word)
 	{
 		Console.WriteLine($"Enter car {word}");
 		Console.WriteLine($"Currenlty its {str}");
-		string change = Console.ReadLine();
+		string change = logic.Stringinput(Console.ReadLine());
 
 		if (string.IsNullOrEmpty(change))
 		{
@@ -100,7 +125,6 @@ public class Inventory
 		foreach (Car car in CarInventory)
 		{
 			Display(car);
-			Console.WriteLine();
 			Console.ReadLine();
 		}
 	}

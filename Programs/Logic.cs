@@ -30,6 +30,18 @@ public class Logic
 		return 0; // default to 0
 	}
 
+	public decimal ConvertToDecimal(string value)
+	{
+		if (decimal.TryParse(value, out decimal decimalValue))
+		{
+			return decimalValue;
+		}
+
+		Console.WriteLine("Input is invalid, please try again.");
+		ConvertToDecimal(Console.ReadLine());
+		return 0;
+	}
+
 	public bool ConvertToBool(string str)
 	{
 		if (str == "1")

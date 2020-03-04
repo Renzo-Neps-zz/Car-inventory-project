@@ -77,7 +77,11 @@ public class ProgramRun
 					Console.WriteLine(foundCar.SoldPrice);
 					foundCar.Color = inventory.StringEditMethod(foundCar.Color, "color");
 					Console.WriteLine(foundCar.Color);
+					foundCar.ConditionSet(logic.Stringinput(Console.ReadLine()));
+					foundCar.StatusSet(logic.Stringinput(Console.ReadLine()));
+					foundCar.IsNew = (logic.ConvertToBool(Console.ReadLine()));
 					inventory.UpdateCar(foundCar);
+					Console.WriteLine("Car has been updated");
 				}
 				else if (input2 == 3) // Display car
 				{
@@ -119,20 +123,15 @@ public class ProgramRun
 				c.Model = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the year of the car");
 				c.Year = logic.ConvertToInteger(Console.ReadLine());
-
 				Console.WriteLine("Please type the purchase price of the car");
-				c.PurchasePrice = logic.ConvertToInteger(Console.ReadLine());
+				c.PurchasePrice = logic.ConvertToDecimal(Console.ReadLine());
 				Console.WriteLine("Please type the milage of the car");
 				c.Miles = logic.ConvertToInteger(Console.ReadLine());
 				Console.WriteLine("Please type the selling price of the car");
-				c.SellingPrice = logic.ConvertToInteger(Console.ReadLine());
+				c.SellingPrice = logic.ConvertToDecimal(Console.ReadLine());
 				Console.WriteLine("Please type the sold price of the car");
-				c.SoldPrice = logic.ConvertToInteger(Console.ReadLine());
+				c.SoldPrice = logic.ConvertToDecimal(Console.ReadLine());
 				Console.WriteLine("Please type the color of the car");
-
-				c.Color = Console.ReadLine();
-				/*We can't use decimals for prices*/
-
 				c.Color = logic.Stringinput(Console.ReadLine());
 				Console.WriteLine("Please type the condition of the car");
 				Console.WriteLine("1 = Great, 2 = Good, 3 = Average, 4 = Terrible, 5 = Destroyed");
